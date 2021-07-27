@@ -98,10 +98,12 @@
     <Content Include="PanelEmpresa\ReportesEmpresa.aspx" />
     <Content Include="PanelEmpresa\SolicitudesEmpresa.aspx" />
     <Content Include="PanelUsuario\LogrosUsuario.aspx" />
+    <Content Include="PanelUsuario\MensajesUsuario.aspx" />
     <Content Include="PanelUsuario\MiCuentaUsuario.aspx" />
     <Content Include="PanelUsuario\MisSolicitudesUsuario.aspx" />
     <Content Include="PanelUsuario\ReportesUsuario.aspx" />
     <Content Include="PanelUsuario\SolicitudesUsuario.aspx" />
+    <Content Include="Resources\estilos.css" />
     <Content Include="Resources\Font-awesome\attribution.js" />
     <Content Include="Resources\Font-awesome\css\all.css" />
     <Content Include="Resources\Font-awesome\css\all.min.css" />
@@ -1803,10 +1805,16 @@
     <Content Include="Resources\Imagenes\reciclemos_sin_bordes.png" />
     <Content Include="Resources\Imagenes\sign-out-alt-solid.svg" />
     <Content Include="Vista\Condiciones.html" />
+    <Content Include="Vista\Enlaces.html" />
+    <Content Include="Vista\index.html" />
+    <Content Include="Vista\Materiales.html" />
+    <Content Include="Vista\Nosotros.html" />
+    <Content Include="Vista\Talleres.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Materiales.cs" />
+    <Compile Include="Clases\Solicitud.cs" />
     <Compile Include="Controladores\Cifrado.cs" />
     <Compile Include="Controladores\ComunaControlador.cs" />
     <Compile Include="Controladores\LoginControlador.cs" />
@@ -1933,6 +1941,13 @@
     </Compile>
     <Compile Include="PanelUsuario\LogrosUsuario.aspx.designer.cs">
       <DependentUpon>LogrosUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PanelUsuario\MensajesUsuario.aspx.cs">
+      <DependentUpon>MensajesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelUsuario\MensajesUsuario.aspx.designer.cs">
+      <DependentUpon>MensajesUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="PanelUsuario\MiCuentaUsuario.aspx.cs">
       <DependentUpon>MiCuentaUsuario.aspx</DependentUpon>

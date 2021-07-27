@@ -13,5 +13,10 @@ namespace reciclemos_v3.Formularios
         {
 
         }
+
+        protected void BtnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

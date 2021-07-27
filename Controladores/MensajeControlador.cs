@@ -9,5 +9,13 @@ namespace reciclemos_v3.Controladores
     public class MensajeControlador
     {
         private static reciclemosEntities dbc = new reciclemosEntities();
+
+
+
+        public string addProspecto(string nombre, string correo, string telefono, string mensaje, int idEstado) {
+            
+            
+            return "";
+        }
     }
 }

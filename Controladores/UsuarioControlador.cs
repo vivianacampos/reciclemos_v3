@@ -30,14 +30,46 @@ namespace reciclemos_v3.Controladores
             return "Usuario registrado con exito";
         }
 
-        public static usuario findUserById(int idUsuario)
+        public usuario findUserById(int idUsuario)
         {
             return dbc.usuario.Find(idUsuario);
         }
 
-        public static usuario findUserByRut(string rut)
+        public usuario findUserByRut(string rut)
         {
-            return dbc.usuario.Find(rut);
+            var usu = from u in dbc.usuario
+                      where u.rut == rut
+                      select u;
+            return usu.FirstOrDefault();
+        }
+
+        public usuario editUsuario(int idUsuario, string nombre, string apellido, string telefono)
+        {
+            usuario usuario = dbc.usuario.Find(idUsuario);
+            usuario.nombre = nombre;
+            usuario.apellido = apellido;
+            usuario.telefono = telefono;
+            dbc.SaveChanges();
+            return usuario;
+        }
+
+        public usuario editPass(int idUsuario, string contrasena)
+        {
+            usuario usuario = dbc.usuario.Find(idUsuario);
+            usuario.contrasena = contrasena;
+            dbc.SaveChanges();
+            return usuario;
+        }
+
+        public usuario edithUsuEmp(string rut, string correo, string telefono, string direccion, int idComuna)
+        {
+            usuario usu = findUserByRut(rut);
+            usu.correo = correo;
+            usu.telefono = telefono;
+            usu.direccion = direccion;
+            usu.idComuna = idComuna;
+            dbc.SaveChanges();
+            return usu;
         }
     }
 }
