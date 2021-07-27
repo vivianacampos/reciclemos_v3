@@ -13,9 +13,18 @@ namespace reciclemos_v3.Controladores
 
 
         public string addProspecto(string nombre, string correo, string telefono, string mensaje, int idEstado) {
+            prospecto p = new prospecto()
+            {
+                nombre = nombre,
+                correo = correo,
+                telefono = telefono,
+                mensaje = mensaje,
+                idEstado = idEstado
+            };
+            dbc.prospecto.Add(p);
+            dbc.SaveChanges();
             
-            
-            return "";
+            return "Mensaje enviado";
         }
     }
 }

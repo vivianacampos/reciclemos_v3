@@ -6,14 +6,14 @@
         <h1 class="display-4 text-center" style="font-size: 2.5rem; padding-bottom: 2rem;">Mensajes Prospectos</h1>
         <div class="row d-flex">
             <div class="col-2 d-flex flex-wrap">
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                <asp:DropDownList ID="DdlFiltrar" runat="server" CssClass="form-control">
                     <asp:ListItem Value="1">Pendientes</asp:ListItem>
-                    <asp:ListItem Value="9">Finalizado</asp:ListItem>
+                    <asp:ListItem Value="5">Finalizado</asp:ListItem>
                     <asp:ListItem Selected="True">Todos</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div class="col-2 d-flex flex-wrap">
-                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" Width="100" />
+                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" Width="100" OnClick="BtnFiltrar_Click" />
             </div>
         </div>
         <div class="row pt-4">

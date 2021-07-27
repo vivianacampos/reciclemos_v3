@@ -24,6 +24,7 @@ namespace reciclemos_v3.PanelEmpresa
             {
                 GdvMensajes.DataSource = from p in dbc.prospecto.ToList()
                                          from e in dbc.estado.ToList()
+                                         where (p.idEstado == e.idEstado)
                                          select new
                                          {
                                              idProspecto = p.idProspecto,
@@ -35,6 +36,30 @@ namespace reciclemos_v3.PanelEmpresa
                                          };
                 GdvMensajes.DataBind();
             }
+        }
+
+        public void filtrarGrid(int id)
+        {
+            using (reciclemosEntities dbc = new reciclemosEntities())
+            {
+                GdvMensajes.DataSource = from p in dbc.prospecto.ToList()
+                                         from e in dbc.estado.ToList()
+                                         where (p.idEstado == e.idEstado && p.idEstado == id)
+                                         select new
+                                         {
+                                             idProspecto = p.idProspecto,
+                                             nombre = p.nombre,
+                                             correo = p.correo,
+                                             telefono = p.telefono,
+                                             mensaje = p.mensaje,
+                                             estado = p.estado.estado1
+                                         };
+                GdvMensajes.DataBind();
+            }
+        }
+        protected void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            filtrarGrid(int.Parse(DdlFiltrar.SelectedValue));
         }
     }
 }

@@ -118,7 +118,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TxtArea" ErrorMessage="Debe escribir sus consultas o dudas" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
                 <div class="col-sm-8 pt-1">
-                    <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="btn btn-success" Width="250" />
+                    <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="btn btn-success" Width="250" OnClick="BtnEnviar_Click" />
                 </div>
                 <div class="col-sm-8 pt-5">
                     <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
